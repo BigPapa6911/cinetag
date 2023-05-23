@@ -10,7 +10,7 @@ const Card = ({ id, title, wallpaper }) => {
     const icon = !isFavorite ? toDesfavorite : toFavorite;
 
     return (
-        <div className={style.card} id={id}>
+        <div className={style.card} id={id} >
             <img src={wallpaper} alt={title} className={style.wallpaper} />
             <h2 className={style.title}>{title}</h2>
             <img src={icon}

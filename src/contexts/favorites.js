@@ -4,7 +4,7 @@ export const FavoritesContext = createContext();
 
 FavoritesContext.displayName = 'Favorites';
 
-export default function FavoritesProvider ({ children }){
+export default function FavoritesProvider({ children }) {
     const [favorite, setFavorite] = useState([]);
 
     return (
@@ -25,13 +25,11 @@ export function useFavoriteContext() {
 
         if (!repeatingFavorite) {
             newList.push(newFavorite);
-            return setFavorite(newList);
+        } else {
+            newList = newList.filter(item => item.id !== newFavorite.id);
         }
 
-        newList.splice(newList.findIndex(
-            item => item.id === newList.find(item => item.id === newFavorite.id).id
-        ), 1);
-        return setFavorite(newList);
+        setFavorite(newList);
     }
 
     return {

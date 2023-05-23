@@ -8,6 +8,9 @@ const Favorites = () => {
 
     const {favorite} = useFavoriteContext();
 
+    const favoritesArray = Array.isArray(favorite) ? favorite : Object.values(favorite);
+
+
     return (
         <>
             <Banner image="favorite" />
@@ -15,7 +18,7 @@ const Favorites = () => {
                 Meus favoritos
             </Title>
             <section className={style.list}>
-                {favorite.map((video) => {
+                {favoritesArray.map((video) => {
                     return <Card {...video} key={video.id} />
                 }
                 )}
