@@ -16,7 +16,7 @@ export default function FavoritesProvider({ children }) {
 }
 
 export function useFavoriteContext() {
-    const [favorite, setFavorite] = useContext(FavoritesContext);
+    const {favorite, setFavorite} = useContext(FavoritesContext);
 
     function addFavorite(newFavorite) {
         const repeatingFavorite = favorite.some(item => item.id === newFavorite.id)
