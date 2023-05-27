@@ -15,7 +15,7 @@ const Favorites = () => {
         <>
             <Banner image="favorite" />
             <Title>
-                Meus favoritos
+                <h1>Meus favoritos</h1>
             </Title>
             <section className={style.list}>
                 {favoritesArray.map((video) => {
